@@ -61,6 +61,7 @@
 
   .ticket-wrap{position:relative;}
   .hero-copy-wrap{position:relative;}
+  .mobile-badge-group{display:contents;}
   .float-badge{
     position:absolute;z-index:3;background:#FFFFFF;color:#061A40;
     font-family:'Inter',sans-serif;font-size:13px;font-weight:700;
@@ -89,11 +90,9 @@
     .float-badge{animation:none;}
   }
   @media(max-width:860px){
-    .float-badge{font-size:11.5px;padding:8px 12px;}
-    .float-badge-1{top:-40px;right:0;}
-    .float-badge-2{position:static;display:inline-flex;margin-bottom:10px;animation:none;}
-    .float-badge-4{position:static;display:inline-flex;margin-top:10px;margin-left:8px;animation:none;}
-    .float-badge-3{position:static;display:inline-flex;margin-top:8px;margin-left:8px;animation:none;}
+    .mobile-badge-group{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
+    .mobile-badge-group .float-badge{font-size:11.5px;padding:7px 12px;position:static;animation:none;}
+    .float-badge-4{position:static;display:inline-flex;margin-top:14px;animation:none;font-size:11.5px;padding:7px 12px;}
   }
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;}
   .stat-line{display:flex;align-items:baseline;gap:10px;margin-bottom:22px;}
@@ -196,11 +195,11 @@
   .compare-row p{color:var(--ink-soft);font-size:14.5px;max-width:520px;}
 
   .isapres{background-color:#FFFFFF;padding:48px 0;border-top:1px solid #BDEFFF;border-bottom:1px solid #BDEFFF;}
-  .isapres .wrap{display:flex;align-items:center;gap:28px;flex-wrap:wrap;justify-content:space-between;}
+  .isapres .wrap{display:flex;flex-direction:column;align-items:center;gap:18px;}
   .isapres .tag{color:var(--teal-dark);font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:1px;text-transform:uppercase;white-space:nowrap;}
 
   .isapre-carousel{
-    flex:1;overflow:hidden;position:relative;
+    width:100%;overflow:hidden;position:relative;
     -webkit-mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
     mask-image:linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%);
   }
@@ -215,11 +214,11 @@
   }
   .isapre-logo-card{
     background:#FFFFFF;border:1px solid #BDEFFF;border-radius:12px;
-    padding:12px 18px;display:flex;align-items:center;justify-content:center;
-    transition:transform .2s ease, box-shadow .2s ease;height:56px;flex-shrink:0;
+    padding:16px 24px;display:flex;align-items:center;justify-content:center;
+    transition:transform .2s ease, box-shadow .2s ease;height:72px;flex-shrink:0;
   }
   .isapre-logo-card:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(0, 63, 163, 0.12);}
-  .isapre-logo-card img{height:26px;width:auto;display:block;}
+  .isapre-logo-card img{height:38px;width:auto;display:block;}
   @media (prefers-reduced-motion: reduce){
     .isapre-logo-row{animation:none;}
   }
@@ -388,6 +387,8 @@
     .testi-photo{min-height:220px;}
     .photo-banner{padding:70px 0;}
     .ticket-perf::before,.ticket-perf::after{display:none;}
+    .isapre-carousel{display:none;}
+    .isapres .wrap{align-items:center;}
   }
 </style>
 </head>
@@ -431,9 +432,11 @@
   <header class="hero" id="inicio">
     <div class="wrap hero-grid">
       <div class="hero-copy-wrap">
+        <div class="mobile-badge-group">
         <div class="float-badge float-badge-1">✓ 100% gratis</div>
         <div class="float-badge float-badge-2">⚡ Cotización en minutos</div>
         <div class="float-badge float-badge-3">🏥 Todas las isapres</div>
+        </div>
         <div class="stat-line"><span class="big">7 isapres comparadas en una sola cotización</span></div>
         <h1 class="headline">Deje de pagar<br>por un plan que <em>no revisa hace años.</em></h1>
         <p class="lead">Comparamos su plan actual contra el resto del mercado y le mostramos, en números, si le conviene cambiarse. Gratis, por WhatsApp, sin presión.</p>
