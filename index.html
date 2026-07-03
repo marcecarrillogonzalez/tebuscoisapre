@@ -91,20 +91,21 @@
     .float-badge{animation:none;}
   }
   @media(max-width:860px){
-    .mobile-badge-group{display:block;position:absolute;inset:0;pointer-events:none;z-index:5;}
+    .mobile-badge-group{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:static;inset:auto;pointer-events:auto;margin-bottom:22px;}
     .mobile-badge-group .float-badge{
-      position:absolute;pointer-events:auto;font-size:11px;padding:7px 11px;
+      position:static;pointer-events:auto;font-size:11px;padding:9px 10px;
+      width:100%;display:flex;align-items:center;justify-content:center;text-align:center;white-space:normal;line-height:1.3;
       animation:mobileBadgeFloat 3.2s ease-in-out infinite;
     }
-    .mobile-badge-group .float-badge-1{top:-6px;right:4px;animation-delay:0s;}
-    .mobile-badge-group .float-badge-2{top:150px;left:-10px;animation-delay:.4s;}
-    .mobile-badge-group .float-badge-3{top:250px;right:-8px;animation-delay:.8s;}
-    .mobile-badge-group .mobile-only-badge{top:400px;left:6px;animation-delay:1.2s;}
+    .mobile-badge-group .float-badge-1{animation-delay:0s;}
+    .mobile-badge-group .float-badge-2{animation-delay:.3s;}
+    .mobile-badge-group .float-badge-3{animation-delay:.6s;}
+    .mobile-badge-group .mobile-only-badge{animation-delay:.9s;}
     @keyframes mobileBadgeFloat{
-      0%,100%{transform:translateY(0) rotate(-1deg);}
-      50%{transform:translateY(-6px) rotate(1deg);}
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-4px);}
     }
-    .mobile-only-badge{display:inline-flex;}
+    .mobile-only-badge{display:flex;}
     .ticket-wrap > .float-badge-4{display:none;}
   }
   .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;}
