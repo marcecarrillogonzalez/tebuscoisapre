@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -50,7 +50,7 @@
   .nav-cta:hover{background:#0077B6;transform:translateY(-2px);}
 
   .hero{
-    position:relative;padding:120px 0 80px;overflow:hidden;
+    position:relative;padding:120px 0 40px;overflow:hidden;
     background:#FFFFFF;
   }
   .hero .wrap{position:relative;z-index:1;width:100%;}
@@ -66,7 +66,7 @@
   }
   .float-badge-1{background:#FFFFFF;color:#061A40;}
   .float-badge-1{top:-46px;right:20px;animation:floatBadge1 5s ease-in-out infinite;}
-  .float-badge-2{top:150px;left:-56px;animation:floatBadge2 6s ease-in-out infinite;animation-delay:.8s;}
+  .float-badge-2{top:280px;left:-56px;animation:floatBadge2 6s ease-in-out infinite;animation-delay:.8s;}
   .float-badge-3{bottom:-30px;right:60px;animation:floatBadge3 7s ease-in-out infinite;animation-delay:1.4s;}
   @keyframes floatBadge1{
     0%,100%{transform:translateY(0) rotate(-2deg);}
@@ -246,6 +246,13 @@
   .mini-list .check{color:#00AFC4;font-weight:700;}
   .form-card{background-color:#FFFFFF;border:1px solid #BDEFFF;border-radius:16px;padding:32px;color:var(--ink);box-shadow:0 18px 40px rgba(0, 119, 182, 0.12);}
 
+  .form-highlight{animation:formPulse 1.2s ease-out;}
+  @keyframes formPulse{
+    0%{box-shadow:0 0 0 0 rgba(0,87,217,.55), 0 18px 40px rgba(0, 63, 163, 0.12);}
+    60%{box-shadow:0 0 0 14px rgba(0,87,217,0), 0 18px 40px rgba(0, 63, 163, 0.12);}
+    100%{box-shadow:0 0 0 0 rgba(0,87,217,0), 0 18px 40px rgba(0, 63, 163, 0.12);}
+  }
+
   .hero-form{
     max-width:420px;margin-left:auto;
     background-color:#061A40 !important;border:none !important;
@@ -377,7 +384,6 @@
     <div class="wrap hero-grid">
       <div class="hero-copy-wrap">
         <div class="float-badge float-badge-1">✓ 100% gratis</div>
-        <div class="float-badge float-badge-2">💬 Respuesta en minutos</div>
         <div class="float-badge float-badge-3">🏥 Todas las isapres</div>
         <div class="stat-line"><span class="big">7 isapres comparadas en una sola cotización</span></div>
         <h1 class="headline">Deje de pagar<br>por un plan que <em>no revisa hace años.</em></h1>
@@ -659,7 +665,12 @@
   document.querySelectorAll('a[href="#cotiza"]').forEach(function(link){
     link.addEventListener('click', function(){
       setTimeout(function(){
+        var formCard = document.getElementById('cotiza');
         var firstInput = document.querySelector('#cotiza input');
+        if(formCard){
+          formCard.classList.add('form-highlight');
+          setTimeout(function(){ formCard.classList.remove('form-highlight'); }, 1200);
+        }
         if(firstInput) firstInput.focus();
       }, 350);
     });
