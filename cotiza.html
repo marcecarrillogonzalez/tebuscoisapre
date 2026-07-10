@@ -659,13 +659,6 @@ fbq('track', 'PageView');
           ? 'Un asesor te escribe por WhatsApp en los próximos minutos con tu comparación real.'
           : 'Un asesor te llama en los próximos minutos con tu comparación real.';
         doneEl.classList.add('active');
-
-        if (prefiereWhatsapp) {
-          const whatsappNumber = '56990411030';
-          const nombre = data.get('nombre') || '';
-          const msg = encodeURIComponent(`Hola, soy ${nombre}, acabo de cotizar en tebuscoisapre.cl y quiero mi comparación.`);
-          setTimeout(function () { window.location.href = `https://wa.me/${whatsappNumber}?text=${msg}`; }, 1800);
-        }
       } else {
         throw new Error('Formspree error');
       }
